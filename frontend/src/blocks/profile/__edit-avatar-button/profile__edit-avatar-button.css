@@ -1,0 +1,21 @@
+.profile__edit-avatar-button {
+  background: #000000 url(../../../images/ava-pen.svg) no-repeat center;
+  position: absolute;
+  border: none;
+  border-radius: 100%;
+  height: 120px;
+  opacity: 0;
+  padding: 0;
+  width: 120px;
+}
+
+.profile__edit-avatar-button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 620px) {
+  .profile__edit-avatar-button {
+    margin-right: 0;
+  }
+}

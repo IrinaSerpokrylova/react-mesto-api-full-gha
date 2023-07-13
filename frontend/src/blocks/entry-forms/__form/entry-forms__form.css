@@ -1,0 +1,12 @@
+.entry-forms__form {
+  display: block;
+  background-color: #000000;
+  color: #cccccc;
+
+  display: flex;
+  flex-direction: column;
+  border-spacing: 43px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}

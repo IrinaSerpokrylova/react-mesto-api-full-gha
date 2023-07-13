@@ -1,0 +1,15 @@
+.entry-forms__question {
+  margin-top: 15px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+@media screen and (max-width: 620px) {
+  .entry-forms__question {
+    margin-top: 20px;
+  }
+}

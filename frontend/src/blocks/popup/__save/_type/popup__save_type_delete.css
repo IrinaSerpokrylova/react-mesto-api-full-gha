@@ -1,0 +1,10 @@
+.popup__save_type_delete {
+  width: 358px;
+  margin-top: -41px;
+}
+
+@media screen and (max-width: 620px) {
+  .popup__save_type_delete {
+    width: 238px;
+  }
+}

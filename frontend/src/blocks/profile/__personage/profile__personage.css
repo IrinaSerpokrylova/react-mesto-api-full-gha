@@ -1,0 +1,14 @@
+.profile__personage {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media screen and (max-width: 620px) {
+  .profile__personage {
+    margin: 26px 0 0;
+    align-items: center;
+    max-width: 254px;
+  }
+}

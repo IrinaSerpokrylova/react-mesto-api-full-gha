@@ -1,0 +1,8 @@
+.entry-forms__form_input {
+  margin-bottom: 30px;
+  background-color: #000000;
+  border: none;
+  border-bottom: 2px solid #cccccc;
+  padding-bottom: 13px;
+  color: #ffffff;
+}

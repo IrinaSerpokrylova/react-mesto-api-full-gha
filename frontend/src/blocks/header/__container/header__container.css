@@ -1,0 +1,23 @@
+.header__container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 142px auto 56px;
+  gap: 24px;
+  align-items: center;
+}
+
+@media screen and (max-width: 620px) {
+  .header__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-flow: row dense;
+    row-gap: 18px;
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .header__container {
+    max-width: 282px;
+  }
+}

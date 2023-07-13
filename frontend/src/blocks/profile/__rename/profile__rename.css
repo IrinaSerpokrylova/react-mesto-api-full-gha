@@ -1,0 +1,11 @@
+.profile__rename {
+  display: flex;
+  align-items: baseline;
+}
+
+@media screen and (max-width: 620px) {
+  .profile__rename {
+    position: relative;
+    max-width: 282px;
+  }
+}
