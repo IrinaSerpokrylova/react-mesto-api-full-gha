@@ -31,7 +31,7 @@ mongoose
 
 const app = express();
 
-app.use(cors({ origin: 'http://localhost:3001', credentials: true }));
+app.use(cors({ origin: 'api.melomori.nomoredomains.xyz', credentials: true }));
 
 app.use(bodyParser.json());
 app.use(cookieParser());
