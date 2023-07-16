@@ -13,7 +13,7 @@ export const validationProperties = {
 };
 
 export const config = {
-  url: 'http://api.melomori.nomoredomains.xyz',
+  url: 'https://api.melomori.nomoredomains.xyz',
   // url: 'http://localhost:3000',
   headers: {
     Accept: 'application/json',
