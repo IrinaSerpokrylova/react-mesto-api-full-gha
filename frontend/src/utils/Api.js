@@ -7,6 +7,8 @@ class Api {
   }
 
   _checkResponse(res) {
+    console.log('Im here');
+    console.log(res);
     if (res.ok) {
       return res.json();
     }
