@@ -1,5 +1,4 @@
 import { config } from './constants';
-// export const BASE_URL = 'http//api.melomori.nomoredomains.xyz';
 export const BASE_URL = config.url;
 
 const checkServerResponse = (res) => {
@@ -23,7 +22,6 @@ export const register = ({ password, email }) => {
 };
 
 export const authorize = ({ password, email }) => {
-  console.log(BASE_URL);
   return fetch(`${BASE_URL}/signin`, {
     method: 'POST',
     headers: {
@@ -36,7 +34,6 @@ export const authorize = ({ password, email }) => {
 };
 
 export const checkToken = () => {
-  console.log(`${BASE_URL}/users/me`);
   return fetch(`${BASE_URL}/users/me`, {
     method: 'GET',
     headers: {

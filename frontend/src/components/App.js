@@ -92,9 +92,8 @@ function App() {
     if (isLoggedIn) {
       Promise.all([api.getUserInfo(), api.getInitialCards()])
         .then(([userData, cards]) => {
-          console.log(cards);
           setCurrentUser(userData);
-          setCards(cards);
+          setCards(cards.reverse());
         })
         .catch((err) => {
           console.log(`Ошибка ${err}`);

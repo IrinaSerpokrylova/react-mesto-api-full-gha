@@ -36,8 +36,8 @@ app.use(
     origin: [
       'https://melomori.nomoredomains.xyz',
       'https://api.melomori.nomoredomains.xyz',
-      'https://www.melomori.nomoredomains.xyz',
-      'https://www.api.melomori.nomoredomains.xyz',
+      'http://melomori.nomoredomains.xyz',
+      'http://api.melomori.nomoredomains.xyz',
       'http://localhost:3000',
     ],
     credentials: true,
