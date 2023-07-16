@@ -35,6 +35,8 @@ https://github.com/IrinaSerpokrylova/express-mesto-gha.git
 
 ## Ссылки на проект
 
-- IP 51.250.1.251
-- Frontend https://melomori.nomoredomains.xyz
-- Backend https://api.melomori.nomoredomains.xyz
+IP 51.250.1.251
+
+Frontend https://melomori.nomoredomains.xyz
+
+Backend https://api.melomori.nomoredomains.xyz
