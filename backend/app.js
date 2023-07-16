@@ -31,7 +31,15 @@ mongoose
 
 const app = express();
 
-app.use(cors({ origin: 'api.melomori.nomoredomains.xyz', credentials: true }));
+app.use(
+  cors({
+    origin: [
+      'http://melomori.nomoredomains.xyz',
+      'http://www.melomori.nomoredomains.xyz',
+    ],
+    credentials: true,
+  }),
+);
 
 app.use(bodyParser.json());
 app.use(cookieParser());
