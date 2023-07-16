@@ -34,8 +34,9 @@ const app = express();
 app.use(
   cors({
     origin: [
-      'http://melomori.nomoredomains.xyz',
-      'http://www.melomori.nomoredomains.xyz',
+      // 'http://melomori.nomoredomains.xyz',
+      // 'http://www.melomori.nomoredomains.xyz',
+      'localhost:3001',
     ],
     credentials: true,
   }),
