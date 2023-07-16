@@ -1,6 +1,5 @@
 require('dotenv').config();
 const express = require('express');
-const errorHandler = require('./middlewares/error-handler');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const helmet = require('helmet');
@@ -8,12 +7,16 @@ const mongoose = require('mongoose');
 const rateLimit = require('express-rate-limit');
 const cors = require('cors');
 const { errors } = require('celebrate');
+const errorHandler = require('./middlewares/error-handler');
 const routes = require('./routes');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 // const NotFoundError = require('./utils/errors/not-found-error');
 
 const { PORT = 3000, DB_URL = 'mongodb://127.0.0.1:27017/mestodb' } =
   process.env;
+
+console.log(process.env.NODE_ENV);
+console.log(process.env.JWT_SECRET);
 
 const limiter = rateLimit({
   max: 100, // лимит в 100 запросов в минуту (дефолт для windowMs)
@@ -35,8 +38,10 @@ app.use(
   cors({
     origin: [
       'http://melomori.nomoredomains.xyz',
+      'http://api.melomori.nomoredomains.xyz',
       'http://www.melomori.nomoredomains.xyz',
-      'localhost:3001',
+      'http://www.api.melomori.nomoredomains.xyz',
+      'http://localhost:3000',
     ],
     credentials: true,
   }),

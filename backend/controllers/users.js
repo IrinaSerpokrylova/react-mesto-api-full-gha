@@ -87,7 +87,7 @@ const createUser = (req, res, next) => {
 
 const login = (req, res, next) => {
   const { email, password } = req.body;
-
+  console.log(req);
   const secretKey = NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret';
   const options = { expiresIn: '7d' };
 
