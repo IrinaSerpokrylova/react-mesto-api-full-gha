@@ -1,4 +1,5 @@
-export const BASE_URL = 'api.melomori.nomoredomains.xyz';
+export const BASE_URL = 'http"//api.melomori.nomoredomains.xyz';
+// export const BASE_URL = 'http://localhost:3000';
 
 const checkServerResponse = (res) => {
   if (res.ok) {
