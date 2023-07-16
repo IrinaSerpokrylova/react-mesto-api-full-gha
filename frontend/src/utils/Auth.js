@@ -2,7 +2,6 @@ import { config } from './constants';
 export const BASE_URL = config.url;
 
 const checkServerResponse = (res) => {
-  console.log(res.url);
   if (res.ok) {
     return res.json();
   }

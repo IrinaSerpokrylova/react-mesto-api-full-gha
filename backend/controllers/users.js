@@ -44,11 +44,13 @@ const getUserById = (req, res, next) => {
 };
 
 const createUser = (req, res, next) => {
+  // eslint-disable-next-line object-curly-newline
   const { name, about, avatar, email } = req.body;
 
   bcrypt
     .hash(req.body.password, 10)
     .then((hash) =>
+    // eslint-disable-next-line implicit-arrow-linebreak
       User.create({
         name,
         about,
@@ -56,6 +58,7 @@ const createUser = (req, res, next) => {
         email,
         password: hash,
       }),
+      // eslint-disable-next-line function-paren-newline
     )
     .then((user) => {
       res.status(created).send({
