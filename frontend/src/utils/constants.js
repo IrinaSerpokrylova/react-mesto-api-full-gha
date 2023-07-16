@@ -14,7 +14,7 @@ export const validationProperties = {
 
 export const config = {
   // url: "https://mesto.nomoreparties.co/v1/cohort-63",
-  url: 'http://localhost:3000',
+  url: 'api.melomori.nomoredomains.xyz',
   headers: {
     // authorization: "12dd9e74-5d63-45ab-b340-1203c962dc2b",
     Accept: 'application/json',
