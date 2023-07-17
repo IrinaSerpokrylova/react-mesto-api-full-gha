@@ -48,9 +48,10 @@ app.use(
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(helmet());
-app.use(limiter);
 
 app.use(requestLogger); // подключаем логгер запросов
+
+app.use(limiter);
 
 app.use(routes);
 

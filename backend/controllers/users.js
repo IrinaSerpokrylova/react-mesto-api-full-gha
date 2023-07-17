@@ -49,15 +49,16 @@ const createUser = (req, res, next) => {
 
   bcrypt
     .hash(req.body.password, 10)
-    .then((hash) =>
-    // eslint-disable-next-line implicit-arrow-linebreak
-      User.create({
-        name,
-        about,
-        avatar,
-        email,
-        password: hash,
-      }),
+    .then(
+      (hash) =>
+        // eslint-disable-next-line implicit-arrow-linebreak
+        User.create({
+          name,
+          about,
+          avatar,
+          email,
+          password: hash,
+        }),
       // eslint-disable-next-line function-paren-newline
     )
     .then((user) => {
@@ -90,7 +91,6 @@ const createUser = (req, res, next) => {
 
 const login = (req, res, next) => {
   const { email, password } = req.body;
-  // console.log(req);
   const secretKey = NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret';
   const options = { expiresIn: '7d' };
 
@@ -104,7 +104,7 @@ const login = (req, res, next) => {
         sameSite: 'None',
         secure: true,
       });
-      res.status(200).send({ token });
+      res.status(200).send('Success');
     })
     .catch(next);
 };
