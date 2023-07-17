@@ -152,8 +152,6 @@ function App() {
   // Check jwt
 
   function checkToken() {
-    // const token = localStorage.getItem("jwt");
-
     auth
       .checkToken()
       .then((res) => {
@@ -195,10 +193,11 @@ function App() {
     auth
       .authorize(loginData)
       .then((res) => {
-        if (res.token) {
+        if (res) {
           setLoggedIn(true);
           // localStorage.setItem('jwt', res.token);
           setUserEmail(loginData.email);
+          // checkToken();
 
           navigate('/');
         }

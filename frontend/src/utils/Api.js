@@ -61,7 +61,7 @@ class Api {
   }
 
   signOut() {
-    return fetch(`${this._url}/signout/`, {
+    return fetch(`${this._url}/signout`, {
       method: 'GET',
       headers: this._headers,
       credentials: 'include',
