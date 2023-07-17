@@ -7,7 +7,7 @@ module.exports = (req, res, next) => {
   const secretKey = NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret';
 
   if (!req.cookies.token) {
-    throw new UnauthorizedError('Необходима авторизация');
+    throw new UnauthorizedError('Необходима авторизацияяяяя');
   }
 
   const { token } = req.cookies;
@@ -16,7 +16,7 @@ module.exports = (req, res, next) => {
   try {
     payload = jwt.verify(token, secretKey);
   } catch (err) {
-    throw new UnauthorizedError('Необходима авторизация');
+    throw new UnauthorizedError('Необходима авторизацияzzzz');
   }
 
   req.user = payload;
