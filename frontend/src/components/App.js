@@ -215,9 +215,13 @@ function App() {
   // Signout, remove jwt from local storage
 
   function handleSignOut() {
-    console.log([document.cookie.split(';')]);
-
-    setLoggedIn(false);
+    // console.log([document.cookie.split(';')]);
+    api
+      .signOut()
+      .then(setLoggedIn(false))
+      .catch((err) => {
+        console.log(`Ошибка ${err}`);
+      });
   }
 
   return (

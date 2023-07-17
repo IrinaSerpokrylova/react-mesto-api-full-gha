@@ -60,6 +60,14 @@ class Api {
     }).then((res) => this._checkResponse(res));
   }
 
+  signOut() {
+    return fetch(`${this._url}/signout/`, {
+      method: 'GET',
+      headers: this._headers,
+      credentials: 'include',
+    }).then((res) => this._checkResponse(res));
+  }
+
   setLike(cardID) {
     return fetch(`${this._url}/cards/${cardID}/likes`, {
       method: 'PUT',
