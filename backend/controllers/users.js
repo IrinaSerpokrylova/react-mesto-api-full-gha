@@ -107,7 +107,7 @@ const login = (req, res, next) => {
         sameSite: 'None',
         secure: true,
       });
-      res.status(200).send('Success');
+      res.status(200).send({ mesage: 'Signed in' });
     })
     .catch(next);
 };
