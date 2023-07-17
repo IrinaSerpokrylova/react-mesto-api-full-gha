@@ -28,19 +28,22 @@ const getUser = (req, res, next) => {
 
 const getUserById = (req, res, next) => {
   const id = req.params.userId;
-  return User.findById(id)
-    .then((user) => {
-      if (!user) {
-        throw new NotFoundError('Нет пользователя с таким id');
-      }
-      res.status(statusOK).send(user);
-    })
-    .catch((err) => {
-      if (err instanceof mongoose.Error.CastError) {
-        next(new BadRequestError('Передан некорректный id'));
-      }
-      next(err);
-    });
+  return (
+    User.findById(id)
+      .then((user) => {
+        if (!user) {
+          throw new NotFoundError('Нет пользователя с таким id');
+        }
+        res.status(statusOK).send(user);
+      })
+      // eslint-disable-next-line consistent-return
+      .catch((err) => {
+        if (err instanceof mongoose.Error.CastError) {
+          return next(new BadRequestError('Передан некорректный id'));
+        }
+        next(err);
+      })
+  );
 };
 
 const createUser = (req, res, next) => {
@@ -119,9 +122,10 @@ const updateUserProfile = (req, res, next) => {
     .then((user) => {
       res.status(statusOK).send(user);
     })
+    // eslint-disable-next-line consistent-return
     .catch((err) => {
       if (err instanceof mongoose.Error.ValidationError) {
-        next(
+        return next(
           new BadRequestError(
             'Переданы некорректные данные при обновлении профиля',
           ),
@@ -141,9 +145,10 @@ const updateUserAvatar = (req, res, next) => {
     .then((user) => {
       res.status(statusOK).send(user);
     })
+    // eslint-disable-next-line consistent-return
     .catch((err) => {
       if (err instanceof mongoose.Error.ValidationError) {
-        next(
+        return next(
           new BadRequestError(
             'Переданы некорректные данные при обновлении аватара',
           ),

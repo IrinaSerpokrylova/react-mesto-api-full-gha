@@ -17,9 +17,10 @@ const createCard = (req, res, next) => {
 
   Card.create({ name, link, owner: req.user._id })
     .then((card) => res.status(created).send(card))
+    // eslint-disable-next-line consistent-return
     .catch((err) => {
       if (err instanceof mongoose.Error.ValidationError) {
-        next(
+        return next(
           new BadRequestError(
             'Переданы некорректные данные при создании карточки',
           ),
@@ -64,9 +65,10 @@ const putCardLike = (req, res, next) => {
         res.status(statusOK).send(card);
       }
     })
+    // eslint-disable-next-line consistent-return
     .catch((err) => {
       if (err instanceof mongoose.Error.CastError) {
-        next(
+        return next(
           new BadRequestError(
             'Переданы некорректные данные для постановки лайка',
           ),
@@ -88,9 +90,10 @@ const deleteCardLike = (req, res, next) => {
       }
       res.send(card);
     })
+    // eslint-disable-next-line consistent-return
     .catch((err) => {
       if (err instanceof mongoose.Error.CastError) {
-        next(
+        return next(
           new BadRequestError('Переданы некорректные данные для снятия лайка'),
         );
       }
