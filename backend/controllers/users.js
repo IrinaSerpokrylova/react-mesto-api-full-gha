@@ -103,6 +103,7 @@ const login = (req, res, next) => {
       const token = jwt.sign({ _id: user._id }, secretKey, options);
       // устанавливаем токен в куки, с httpOnly
       res.cookie('token', token, {
+        maxAge: 24 * 60 * 60 * 1000,
         httpOnly: true,
         sameSite: 'None',
         secure: true,
